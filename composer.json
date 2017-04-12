@@ -10,6 +10,11 @@
             "LarsNieuwenhuizen\\Trustpilot\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "LarsNieuwenhuizen\\Trustpilot\\Tests\\": "tests/"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
@@ -17,5 +22,8 @@
             "email": "l.nieuwenhuizen@developers.nl"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^6.1"
+    }
 }

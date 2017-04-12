@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/badges/gpa.svg)](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot)
+[![Test Coverage](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/badges/coverage.svg)](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/coverage)
+
 # trustpilot
 PHP library for communication with Trustpilot 
 

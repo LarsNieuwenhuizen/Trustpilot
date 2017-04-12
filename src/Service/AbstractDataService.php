@@ -30,11 +30,12 @@ abstract class AbstractDataService
 
     /**
      * @param string $endPoint
+     * @param array $options
      * @return ResponseInterface
      */
-    public function get(string $endPoint)
+    public function get(string $endPoint, array $options)
     {
-        return $this->client->getHttpClient()->request('GET', $endPoint);
+        return $this->client->getHttpClient()->request('GET', $endPoint, $options);
     }
 
     /**

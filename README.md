@@ -16,4 +16,5 @@ Later on the private requests will be added with oAuth support.
 
 - [Get public business unit](#https://developers.trustpilot.com/business-unit-api#get-public-business-unit)
 - [Get a business unit's reviews](#https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-reviews)
+- [Get a business unit's categories](#https://developers.trustpilot.com/business-unit-api#list-categories-for-business-unit)
 

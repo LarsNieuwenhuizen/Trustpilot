@@ -30,11 +30,16 @@ abstract class AbstractDataService
 
     /**
      * @param string $endPoint
+     * @param array $routeParts
+     * @param array $queryParts
      * @param array $options
      * @return ResponseInterface
      */
-    public function get(string $endPoint, array $options)
+    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options): ResponseInterface
     {
+        $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
+        $endPoint = $this->combineQueryParts($endPoint, $queryParts);
+
         return $this->client->getHttpClient()->request('GET', $endPoint, $options);
     }
 
@@ -54,5 +59,25 @@ abstract class AbstractDataService
             },
             $endPoint
         );
+    }
+
+    /**
+     * @param string $endPoint
+     * @param array $queryParts
+     * @return string
+     */
+    protected function combineQueryParts(string $endPoint, array $queryParts): string
+    {
+        $parsedUrl = parse_url($endPoint);
+        $combinedQueryParts = [];
+
+        if (isset($parsedUrl['query'])) {
+            parse_str($parsedUrl['query'], $combinedQueryParts);
+        }
+
+        $allQueryParts = array_merge($queryParts, $combinedQueryParts);
+        $query = http_build_query($allQueryParts);
+
+        return $endPoint . '?' . $query;
     }
 }

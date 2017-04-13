@@ -1,14 +1,14 @@
 <?php
+
 namespace LarsNieuwenhuizen\Trustpilot;
 
 /**
- * This class manages the base configuration the client needs to communicate with Trustpilot
+ * This class manages the base configuration the client needs to communicate with Trustpilot.
  *
  * Class Configuration
  */
 class Configuration
 {
-
     /**
      * @var string
      */

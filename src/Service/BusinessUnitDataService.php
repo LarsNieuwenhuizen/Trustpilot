@@ -1,11 +1,11 @@
 <?php
+
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
 use Psr\Http\Message\ResponseInterface;
 
 final class BusinessUnitDataService extends AbstractDataService
 {
-
     /**
      * @const string
      */
@@ -27,12 +27,13 @@ final class BusinessUnitDataService extends AbstractDataService
     const TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_WEB_LINKS = 'business-units/{businessUnitId}/web-links';
 
     /**
-     * $client->businessUnitDataService->getBusinessUnit('YouBusinessUnitId');
+     * $client->businessUnitDataService->getBusinessUnit('YouBusinessUnitId');.
      *
      * @param string $id
-     * @param array $query
-     * @param array $options
-     * @param bool $returnResponse
+     * @param array  $query
+     * @param array  $options
+     * @param bool   $returnResponse
+     *
      * @return ResponseInterface|string
      */
     public function getBusinessUnit(string $id, array $query = [], array $options = [], bool $returnResponse = false)
@@ -47,12 +48,13 @@ final class BusinessUnitDataService extends AbstractDataService
     }
 
     /**
-     * $client->businessUnitDataService->getBusinessUnitReviews('YouBusinessUnitId');
+     * $client->businessUnitDataService->getBusinessUnitReviews('YouBusinessUnitId');.
      *
      * @param string $id
-     * @param array $query
-     * @param array $options
-     * @param bool $returnResponse
+     * @param array  $query
+     * @param array  $options
+     * @param bool   $returnResponse
+     *
      * @return ResponseInterface|string
      */
     public function getBusinessUnitReviews(string $id, array $query = [], array $options = [], bool $returnResponse = false)
@@ -67,12 +69,13 @@ final class BusinessUnitDataService extends AbstractDataService
     }
 
     /**
-     * $client->businessUnitDataService->getBusinessUnitCategories('YouBusinessUnitId');
+     * $client->businessUnitDataService->getBusinessUnitCategories('YouBusinessUnitId');.
      *
      * @param string $id
-     * @param array $query
-     * @param array $options
-     * @param bool $returnResponse
+     * @param array  $query
+     * @param array  $options
+     * @param bool   $returnResponse
+     *
      * @return ResponseInterface|string
      */
     public function getBusinessUnitCategories(string $id, array $query = [], array $options = [], bool $returnResponse = false)
@@ -87,12 +90,13 @@ final class BusinessUnitDataService extends AbstractDataService
     }
 
     /**
-     * $businessUnit = $client->businessDataService->getBusinessUnitWebLinks('541YouBusinessUnitId', ['locale' => 'nl-NL']);
+     * $businessUnit = $client->businessDataService->getBusinessUnitWebLinks('541YouBusinessUnitId', ['locale' => 'nl-NL']);.
      *
      * @param string $id
-     * @param array $query
-     * @param array $options
-     * @param bool $returnResponse
+     * @param array  $query
+     * @param array  $options
+     * @param bool   $returnResponse
+     *
      * @return ResponseInterface|string
      */
     public function getBusinessUnitWebLinks(string $id, array $query = [], array $options = [], $returnResponse = false)

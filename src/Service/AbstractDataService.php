@@ -1,4 +1,5 @@
 <?php
+
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
 use LarsNieuwenhuizen\Trustpilot\Client;
@@ -6,7 +7,6 @@ use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractDataService
 {
-
     /**
      * @var Client
      */
@@ -30,12 +30,13 @@ abstract class AbstractDataService
 
     /**
      * @param string $endPoint
-     * @param array $routeParts
-     * @param array $queryParts
-     * @param array $options
+     * @param array  $routeParts
+     * @param array  $queryParts
+     * @param array  $options
+     *
      * @return ResponseInterface
      */
-    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options): ResponseInterface
+    public function get(string $endPoint, array $routeParts, array $queryParts, array $options): ResponseInterface
     {
         $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
         $endPoint = $this->combineQueryParts($endPoint, $queryParts);
@@ -46,6 +47,7 @@ abstract class AbstractDataService
     /**
      * @param $endPoint
      * @param array $replacements
+     *
      * @return string
      */
     protected function endPointVariableReplacement($endPoint, array $replacements): string
@@ -63,7 +65,8 @@ abstract class AbstractDataService
 
     /**
      * @param string $endPoint
-     * @param array $queryParts
+     * @param array  $queryParts
+     *
      * @return string
      */
     protected function combineQueryParts(string $endPoint, array $queryParts): string
@@ -78,6 +81,6 @@ abstract class AbstractDataService
         $allQueryParts = array_merge($queryParts, $combinedQueryParts);
         $query = http_build_query($allQueryParts);
 
-        return $endPoint . '?' . $query;
+        return $endPoint.'?'.$query;
     }
 }

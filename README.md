@@ -1,6 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/badges/gpa.svg)](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot)
 [![Test Coverage](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/badges/coverage.svg)](https://codeclimate.com/github/LarsNieuwenhuizen/Trustpilot/coverage)
 [![Build Status](https://travis-ci.org/LarsNieuwenhuizen/Trustpilot.svg?branch=master)](https://travis-ci.org/LarsNieuwenhuizen/Trustpilot)
+[![StyleCI](https://styleci.io/repos/87822841/shield?branch=master)](https://styleci.io/repos/87822841)
 
 # trustpilot
 PHP library for communication with Trustpilot 

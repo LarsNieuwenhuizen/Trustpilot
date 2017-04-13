@@ -58,12 +58,13 @@ final class BusinessUnitDataService extends AbstractDataService
     public function getBusinessUnit(string $id, array $query = [], array $options = [], bool $returnResponse = false)
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_SINGLE;
+        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
         if ($returnResponse === true) {
-            return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
+            return $response;
         }
 
-        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -78,12 +79,13 @@ final class BusinessUnitDataService extends AbstractDataService
     public function getBusinessUnitReviews(string $id, array $query = [], array $options = [], bool $returnResponse = false)
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_REVIEWS;
+        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
         if ($returnResponse === true) {
-            return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
+            return $response;
         }
 
-        return $this->get($endPoint, $query, $options)->getBody()->getContents();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -98,12 +100,13 @@ final class BusinessUnitDataService extends AbstractDataService
     public function getBusinessUnitCategories(string $id, array $query = [], array $options = [], bool $returnResponse = false)
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_CATEGORIES;
+        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
         if ($returnResponse === true) {
-            return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
+            return $response;
         }
 
-        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
+        return $response->getBody()->getContents();
     }
 
     /**
@@ -118,11 +121,12 @@ final class BusinessUnitDataService extends AbstractDataService
     public function getBusinessUnitWebLinks(string $id, array $query = [], array $options = [], $returnResponse = false)
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_WEB_LINKS;
+        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
         if ($returnResponse === true) {
-            return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
+            return $response;
         }
 
-        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
+        return $response->getBody()->getContents();
     }
 }

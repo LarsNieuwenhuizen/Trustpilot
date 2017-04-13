@@ -35,7 +35,7 @@ abstract class AbstractDataService
      * @param array $options
      * @return ResponseInterface
      */
-    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options): ResponseInterface
+    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options = []): ResponseInterface
     {
         $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
         $endPoint = $this->combineQueryParts($endPoint, $queryParts);

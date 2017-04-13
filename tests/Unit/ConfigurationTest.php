@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace LarsNieuwenhuizen\Trustpilot\Tests\Unit;
@@ -8,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 final class ConfigurationTest extends TestCase
 {
-
     /**
      * @var Configuration
      */

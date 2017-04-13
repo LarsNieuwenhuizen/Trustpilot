@@ -1,4 +1,5 @@
 <?php
+
 namespace LarsNieuwenhuizen\Trustpilot;
 
 use GuzzleHttp\Client as HttpClient;
@@ -23,17 +24,18 @@ class Client
 
     /**
      * Client constructor.
+     *
      * @param Configuration $configuration
      */
     public function __construct(Configuration $configuration)
     {
         $this->configuration = $configuration;
         $this->httpClient = new HttpClient([
-            'base_uri' => $configuration->getBaseUrl() . $configuration->getBasePath(),
-            'headers' => [
-                'baseUrl' => $configuration->getBaseUrl() . $configuration->getBasePath(),
-                'apikey' => $configuration->getApiKey()
-            ]
+            'base_uri' => $configuration->getBaseUrl().$configuration->getBasePath(),
+            'headers'  => [
+                'baseUrl' => $configuration->getBaseUrl().$configuration->getBasePath(),
+                'apikey'  => $configuration->getApiKey(),
+            ],
         ]);
         $this->businessDataService = new BusinessUnitDataService($this);
     }

@@ -1,0 +1,13 @@
+preset: psr2
+
+linting: true
+
+enabled:
+  - concat_with_spaces
+  - no_blank_lines_before_namespace
+
+finder:
+  exclude:
+    - "tests"
+  not-name:
+    - "*Test.php"

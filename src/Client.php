@@ -3,6 +3,7 @@ namespace LarsNieuwenhuizen\Trustpilot;
 
 use GuzzleHttp\Client as HttpClient;
 use LarsNieuwenhuizen\Trustpilot\Service\BusinessUnitDataService;
+use LarsNieuwenhuizen\Trustpilot\Service\CategoriesDataService;
 
 class Client
 {
@@ -22,6 +23,11 @@ class Client
     public $businessDataService;
 
     /**
+     * @var CategoriesDataService
+     */
+    public $categoryDataService;
+
+    /**
      * Client constructor.
      * @param Configuration $configuration
      */
@@ -36,6 +42,7 @@ class Client
             ]
         ]);
         $this->businessDataService = new BusinessUnitDataService($this);
+        $this->categoryDataService = new CategoriesDataService($this);
     }
 
     /**

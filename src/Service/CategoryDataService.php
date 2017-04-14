@@ -3,7 +3,7 @@ namespace LarsNieuwenhuizen\Trustpilot\Service;
 
 use Psr\Http\Message\ResponseInterface;
 
-final class CategoriesDataService extends AbstractDataService
+final class CategoryDataService extends AbstractDataService
 {
 
     /**

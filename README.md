@@ -27,3 +27,18 @@ Later on the private requests will be added with oAuth support.
 
 
 - [Get a consumer's reviews](#https://developers.trustpilot.com/consumer-api#get-a-consumer's-reviews)
+
+
+## Example setup
+```php
+$configuration = new \LarsNieuwenhuizen\Trustpilot\Configuration();
+$configuration->setBaseUrl('https://api.trustpilot.com/')
+    ->setBasePath('v1/')
+    ->setDefaultResultsPerPage(5)
+    ->setDefaultOrderBy('createdat.desc')
+    ->setApiKey('apikey');
+
+$client = new \LarsNieuwenhuizen\Trustpilot\Client($configuration);
+
+$result = $client->businessDataService->getAllBusinessUnits();
+```

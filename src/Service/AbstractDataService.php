@@ -87,6 +87,6 @@ abstract class AbstractDataService
 
         $query = http_build_query($allQueryParts);
 
-        return $endPoint . '?' . $query;
+        return $parsedUrl['path'] . '?' . $query;
     }
 }

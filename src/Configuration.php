@@ -22,7 +22,12 @@ class Configuration
     /**
      * @var int
      */
-    protected $businessUserOauthToken;
+    protected $defaultResultsPerPage = 10;
+
+    /**
+     * @var string
+     */
+    protected $defaultOrderBy = 'createdat.desc';
 
     /**
      * @var string
@@ -72,22 +77,6 @@ class Configuration
     }
 
     /**
-     * @return int
-     */
-    public function getBusinessUserOauthToken()
-    {
-        return $this->businessUserOauthToken;
-    }
-
-    /**
-     * @param int $businessUserOauthToken
-     */
-    public function setBusinessUserOauthToken($businessUserOauthToken)
-    {
-        $this->businessUserOauthToken = $businessUserOauthToken;
-    }
-
-    /**
      * @return string
      */
     public function getBasePath()
@@ -133,5 +122,37 @@ class Configuration
     public function setApiKey(string $apiKey)
     {
         $this->apiKey = $apiKey;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDefaultResultsPerPage(): int
+    {
+        return $this->defaultResultsPerPage;
+    }
+
+    /**
+     * @param int $defaultResultsPerPage
+     */
+    public function setDefaultResultsPerPage(int $defaultResultsPerPage)
+    {
+        $this->defaultResultsPerPage = $defaultResultsPerPage;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultOrderBy(): string
+    {
+        return $this->defaultOrderBy;
+    }
+
+    /**
+     * @param string $defaultOrderBy
+     */
+    public function setDefaultOrderBy(string $defaultOrderBy)
+    {
+        $this->defaultOrderBy = $defaultOrderBy;
     }
 }

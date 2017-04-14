@@ -32,18 +32,21 @@ final class BusinessUnitDataService extends AbstractDataService
     const TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_WEB_LINKS = 'business-units/{businessUnitId}/web-links';
 
     /**
+     * @param array $query
+     * @param array $options
      * @param bool $returnResponse
      * @return ResponseInterface|string
      */
-    public function getAllBusinessUnits($returnResponse = false)
+    public function getAllBusinessUnits(array $query = [], array $options = [], $returnResponse = false)
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_ALL;
+        $response = $this->get($endPoint, [], $query, $options);
 
         if ($returnResponse === true) {
-            return $this->get($endPoint);
+            return $response;
         }
 
-        return $this->get($endPoint)->getBody()->getContents();
+        return $response->getBody()->getContents();
     }
 
     /**

@@ -76,6 +76,15 @@ abstract class AbstractDataService
         }
 
         $allQueryParts = array_merge($queryParts, $combinedQueryParts);
+
+        if (!isset($allQueryParts['orderBy'])) {
+            $allQueryParts['orderBy'] = $this->getClient()->getConfiguration()->getDefaultOrderBy();
+        }
+
+        if (!isset($allQueryParts['perPage'])) {
+            $allQueryParts['perPage'] = $this->getClient()->getConfiguration()->getDefaultResultsPerPage();
+        }
+
         $query = http_build_query($allQueryParts);
 
         return $endPoint . '?' . $query;

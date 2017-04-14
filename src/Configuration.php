@@ -54,10 +54,13 @@ class Configuration
 
     /**
      * @param string $businessUnitId
+     * @return Configuration
      */
-    public function setBusinessUnitId(string $businessUnitId)
+    public function setBusinessUnitId(string $businessUnitId): Configuration
     {
         $this->businessUnitId = $businessUnitId;
+
+        return $this;
     }
 
     /**
@@ -70,10 +73,13 @@ class Configuration
 
     /**
      * @param string $baseUrl
+     * @return Configuration
      */
-    public function setBaseUrl($baseUrl)
+    public function setBaseUrl($baseUrl): Configuration
     {
         $this->baseUrl = $baseUrl;
+
+        return $this;
     }
 
     /**
@@ -86,10 +92,13 @@ class Configuration
 
     /**
      * @param string $basePath
+     * @return Configuration
      */
-    public function setBasePath($basePath)
+    public function setBasePath($basePath): Configuration
     {
         $this->basePath = $basePath;
+
+        return $this;
     }
 
     /**
@@ -102,10 +111,13 @@ class Configuration
 
     /**
      * @param bool $allowRedirects
+     * @return Configuration
      */
-    public function setAllowRedirects(bool $allowRedirects)
+    public function setAllowRedirects(bool $allowRedirects): Configuration
     {
         $this->allowRedirects = $allowRedirects;
+
+        return $this;
     }
 
     /**
@@ -118,10 +130,13 @@ class Configuration
 
     /**
      * @param string $apiKey
+     * @return Configuration
      */
-    public function setApiKey(string $apiKey)
+    public function setApiKey(string $apiKey): Configuration
     {
         $this->apiKey = $apiKey;
+
+        return $this;
     }
 
     /**
@@ -134,10 +149,13 @@ class Configuration
 
     /**
      * @param int $defaultResultsPerPage
+     * @return Configuration
      */
-    public function setDefaultResultsPerPage(int $defaultResultsPerPage)
+    public function setDefaultResultsPerPage(int $defaultResultsPerPage): Configuration
     {
         $this->defaultResultsPerPage = $defaultResultsPerPage;
+
+        return $this;
     }
 
     /**
@@ -150,9 +168,12 @@ class Configuration
 
     /**
      * @param string $defaultOrderBy
+     * @return Configuration
      */
-    public function setDefaultOrderBy(string $defaultOrderBy)
+    public function setDefaultOrderBy(string $defaultOrderBy): Configuration
     {
         $this->defaultOrderBy = $defaultOrderBy;
+
+        return $this;
     }
 }

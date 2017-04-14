@@ -1,9 +1,7 @@
 <?php
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
-use Psr\Http\Message\ResponseInterface;
-
-class ConsumerDataService extends AbstractDataService
+final class ConsumerDataService extends AbstractDataService
 {
 
     /**

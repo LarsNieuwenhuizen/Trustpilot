@@ -1,8 +1,6 @@
 <?php
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
-use Psr\Http\Message\ResponseInterface;
-
 final class CategoryDataService extends AbstractDataService
 {
 

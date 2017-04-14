@@ -7,3 +7,6 @@ before_install:
 script:
   - vendor/bin/phpunit --stop-on-failure -c phpunit.xml --coverage-clover build/logs/clover.xml
   - vendor/bin/test-reporter
+cache:
+  directories:
+    - vendor

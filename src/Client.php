@@ -43,7 +43,6 @@ class Client
         $this->httpClient = new HttpClient([
             'base_uri' => $configuration->getBaseUrl() . $configuration->getBasePath(),
             'headers' => [
-                'baseUrl' => $configuration->getBaseUrl() . $configuration->getBasePath(),
                 'apikey' => $configuration->getApiKey()
             ]
         ]);
@@ -74,5 +73,27 @@ class Client
     public function getHttpClient(): HttpClient
     {
         return $this->httpClient;
+    }
+
+    /**
+     * @param string $orderBy
+     * @return Client
+     */
+    public function orderBy(string $orderBy): Client
+    {
+        $this->configuration->setDefaultOrderBy($orderBy);
+
+        return $this;
+    }
+
+    /**
+     * @param int $resultsPerPage
+     * @return Client
+     */
+    public function perPage(int $resultsPerPage): Client
+    {
+        $this->configuration->setDefaultResultsPerPage($resultsPerPage);
+
+        return $this;
     }
 }

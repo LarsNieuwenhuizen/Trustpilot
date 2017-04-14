@@ -18,4 +18,12 @@ Later on the private requests will be added with oAuth support.
 - [Get public business unit](#https://developers.trustpilot.com/business-unit-api#get-public-business-unit)
 - [Get a business unit's reviews](#https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-reviews)
 - [Get a business unit's categories](#https://developers.trustpilot.com/business-unit-api#list-categories-for-business-unit)
+- [Get a business unit's web links](#https://developers.trustpilot.com/business-unit-api#get-a-business-unit's-web-links)
+- [Get a list of business units](#https://developers.trustpilot.com/business-unit-api#get-a-list-of-business-units)
 
+
+- [Get category](#https://developers.trustpilot.com/categories-api#get-category)
+- [List business units in category](#https://developers.trustpilot.com/categories-api#list-business-units-in-category)
+
+
+- [Get a consumer's reviews](#https://developers.trustpilot.com/consumer-api#get-a-consumer's-reviews)

@@ -26,8 +26,8 @@ final class ConfigurationTest extends TestCase
     /**
      * @test
      */
-    public function setApiKeyReturnsVoid()
+    public function setApiKeyReturnsConfigurationObject()
     {
-        $this->assertNull($this->subject->setApiKey('test'));
+        $this->assertInstanceOf(Configuration::class, $this->subject->setApiKey('test'));
     }
 }

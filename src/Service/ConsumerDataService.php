@@ -15,18 +15,12 @@ class ConsumerDataService extends AbstractDataService
      * @param $consumerId
      * @param array $queryParts
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getConsumerReviews($consumerId, array $queryParts = [], array $options = [], bool $returnResponse = false)
+    public function getConsumerReviews($consumerId, array $queryParts = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_CONSUMER_GET_REVIEWS;
-        $response = $this->get($endPoint, ['{consumerId}' => $consumerId]);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{consumerId}' => $consumerId], $queryParts, $options)->getBody()->getContents();
     }
 }

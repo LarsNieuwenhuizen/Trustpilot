@@ -34,19 +34,13 @@ final class BusinessUnitDataService extends AbstractDataService
     /**
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getAllBusinessUnits(array $query = [], array $options = [], $returnResponse = false)
+    public function getAllBusinessUnits(array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_ALL;
-        $response = $this->get($endPoint, [], $query, $options);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, [], $query, $options)->getBody()->getContents();
     }
 
     /**
@@ -55,19 +49,13 @@ final class BusinessUnitDataService extends AbstractDataService
      * @param string $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getBusinessUnit(string $id, array $query = [], array $options = [], bool $returnResponse = false)
+    public function getBusinessUnit(string $id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_SINGLE;
-        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
     }
 
     /**
@@ -76,19 +64,13 @@ final class BusinessUnitDataService extends AbstractDataService
      * @param string $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getBusinessUnitReviews(string $id, array $query = [], array $options = [], bool $returnResponse = false)
+    public function getBusinessUnitReviews(string $id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_REVIEWS;
-        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
     }
 
     /**
@@ -97,19 +79,13 @@ final class BusinessUnitDataService extends AbstractDataService
      * @param string $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getBusinessUnitCategories(string $id, array $query = [], array $options = [], bool $returnResponse = false)
+    public function getBusinessUnitCategories(string $id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_CATEGORIES;
-        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
     }
 
     /**
@@ -118,18 +94,12 @@ final class BusinessUnitDataService extends AbstractDataService
      * @param string $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getBusinessUnitWebLinks(string $id, array $query = [], array $options = [], $returnResponse = false)
+    public function getBusinessUnitWebLinks(string $id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_BUSINESS_UNIT_GET_WEB_LINKS;
-        $response = $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options);
 
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{businessUnitId}' => $id], $query, $options)->getBody()->getContents();
     }
 }

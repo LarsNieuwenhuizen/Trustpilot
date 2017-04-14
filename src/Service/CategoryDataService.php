@@ -20,39 +20,25 @@ final class CategoryDataService extends AbstractDataService
      * @param $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getCategory($id, array $query = [], array $options = [], bool $returnResponse = false)
+    public function getCategory($id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_CATEGORIES_GET_SINGLE;
 
-        $response = $this->get($endPoint, ['{categoryId}' => $id], $query, $options);
-
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{categoryId}' => $id], $query, $options)->getBody()->getContents();
     }
 
     /**
      * @param $id
      * @param array $query
      * @param array $options
-     * @param bool $returnResponse
-     * @return ResponseInterface|string
+     * @return string
      */
-    public function getCategoryBusinessUnits($id, array $query = [], array $options = [], bool $returnResponse = false)
+    public function getCategoryBusinessUnits($id, array $query = [], array $options = []): string
     {
         $endPoint = self::TRUSTPILOT_ENDPOINTS_CATEGORIES_GET_BUSINESS_UNITS;
 
-        $response = $this->get($endPoint, ['{categoryId}' => $id], $query, $options);
-
-        if ($returnResponse === true) {
-            return $response;
-        }
-
-        return $response->getBody()->getContents();
+        return $this->get($endPoint, ['{categoryId}' => $id], $query, $options)->getBody()->getContents();
     }
 }

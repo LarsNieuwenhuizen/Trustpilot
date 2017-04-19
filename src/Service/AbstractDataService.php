@@ -1,6 +1,7 @@
 <?php
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
+use GuzzleHttp\Psr7\Response;
 use LarsNieuwenhuizen\Trustpilot\Client;
 use Psr\Http\Message\ResponseInterface;
 
@@ -37,10 +38,24 @@ abstract class AbstractDataService
      */
     public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options = []): ResponseInterface
     {
-        $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
-        $endPoint = $this->combineQueryParts($endPoint, $queryParts);
+        try {
+            $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
+            $endPoint = $this->combineQueryParts($endPoint, $queryParts);
 
-        return $this->client->getHttpClient()->request('GET', $endPoint, $options);
+            return $this->client->getHttpClient()->request('GET', $endPoint, $options);
+        } catch (\Exception $exception) {
+            error_log($exception->getMessage());
+
+            $message = new Response(
+                $exception->getCode(),
+                    [
+                        'Content-Type' => 'application/json; charset=utf-8;'
+                    ],
+                    $exception->getMessage()
+            );
+
+            return $message;
+        }
     }
 
     /**

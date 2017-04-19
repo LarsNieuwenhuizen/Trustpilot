@@ -42,3 +42,8 @@ $client = new \LarsNieuwenhuizen\Trustpilot\Client($configuration);
 
 $result = $client->businessDataService->getAllBusinessUnits();
 ```
+
+## Install via composer
+```bash
+$ composer require larsnieuwenhuizen/trustpilot
+```

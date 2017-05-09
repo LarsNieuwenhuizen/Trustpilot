@@ -1,6 +1,9 @@
 <?php
 namespace LarsNieuwenhuizen\Trustpilot;
 
+use LarsNieuwenhuizen\Trustpilot\Exception\TrustPilotException;
+use Symfony\Component\Yaml\Yaml;
+
 /**
  * This class manages the base configuration the client needs to communicate with Trustpilot
  *
@@ -12,12 +15,12 @@ class Configuration
     /**
      * @var string
      */
-    protected $baseUrl;
+    protected $baseUrl = 'https://api.trustpilot.com/';
 
     /**
      * @var string
      */
-    protected $basePath;
+    protected $basePath = 'v1/';
 
     /**
      * @var int
@@ -43,6 +46,50 @@ class Configuration
      * @var bool
      */
     protected $allowRedirects = false;
+
+    /**
+     * @param string|null $configurationFile
+     */
+    public function __construct($configurationFile = null)
+    {
+        $defaultConfigFile = dirname(dirname(__FILE__)) . '/config.yaml';
+
+        if ($configurationFile === null && file_exists($defaultConfigFile)) {
+            $configurationFile = $defaultConfigFile;
+        }
+
+        if (is_string($configurationFile)) {
+            $this->setConfigurationFromYaml($configurationFile);
+        }
+    }
+
+    /**
+     * @param $file
+     */
+    protected function setConfigurationFromYaml($file)
+    {
+        try {
+            $configuration = Yaml::parse(file_get_contents($file))['TrustPilot'];
+
+            if (isset($configuration['apiKey'])) {
+                $this->setApiKey($configuration['apiKey']);
+            }
+            if (isset($configuration['resultsPerPage'])) {
+                $this->setDefaultResultsPerPage($configuration['resultsPerPage']);
+            }
+            if (isset($configuration['orderBy'])) {
+                $this->setDefaultOrderBy($configuration['orderBy']);
+            }
+            if (isset($configuration['basePath'])) {
+                $this->setBasePath($configuration['basePath']);
+            }
+            if (isset($configuration['baseUrl'])) {
+                $this->setBaseUrl($configuration['baseUrl']);
+            }
+        } catch (\Exception $exception) {
+            error_log($exception->getMessage());
+        }
+    }
 
     /**
      * @return string
@@ -122,10 +169,15 @@ class Configuration
 
     /**
      * @return string
+     * @throws TrustPilotException
      */
     public function getApiKey(): string
     {
-        return $this->apiKey;
+        if ($this->apiKey) {
+            return $this->apiKey;
+        }
+
+        throw new TrustPilotException('TrustPilot configuration is missing the api key');
     }
 
     /**

@@ -3,7 +3,8 @@
     "description": "PHP library for communication with the Trustpilot API",
     "require": {
         "guzzlehttp/guzzle": "^6.2",
-        "guzzlehttp/oauth-subscriber": "^0.3.0"
+        "guzzlehttp/oauth-subscriber": "^0.3.0",
+        "symfony/yaml": "^3.2"
     },
     "autoload": {
         "psr-4": {

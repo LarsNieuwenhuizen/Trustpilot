@@ -42,7 +42,7 @@ You can also define a different file using the Configuration constructor like th
 $configuration = new Trustpilot\Configuration('path/to/my/config.yaml');
 ```
 
-If you've got that file configuration can be set as such:
+If you've got that file, configuration can be set as such:
 
 ```yaml
 TrustPilot:

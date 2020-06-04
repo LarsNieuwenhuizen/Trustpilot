@@ -1,7 +1,7 @@
 <?php
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
-final class ConsumerDataService extends AbstractDataService
+class ConsumerDataService extends AbstractDataService
 {
 
     /**

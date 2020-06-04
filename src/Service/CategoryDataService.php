@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
-final class CategoryDataService extends AbstractDataService
+class CategoryDataService extends AbstractDataService
 {
 
     /**

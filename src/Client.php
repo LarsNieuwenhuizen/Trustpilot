@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace LarsNieuwenhuizen\Trustpilot;
 
 use GuzzleHttp\Client as HttpClient;

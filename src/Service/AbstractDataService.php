@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
+
 namespace LarsNieuwenhuizen\Trustpilot\Service;
 
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Response;
 use LarsNieuwenhuizen\Trustpilot\Client;
 use Psr\Http\Message\ResponseInterface;
@@ -35,9 +38,14 @@ abstract class AbstractDataService
      * @param array $queryParts
      * @param array $options
      * @return ResponseInterface
+     * @throws GuzzleException
      */
-    public function get(string $endPoint, array $routeParts = [], array $queryParts = [], array $options = []): ResponseInterface
-    {
+    public function get(
+        string $endPoint,
+        array $routeParts = [],
+        array $queryParts = [],
+        array $options = []
+    ): ResponseInterface {
         try {
             $endPoint = $this->endPointVariableReplacement($endPoint, $routeParts);
             $endPoint = $this->combineQueryParts($endPoint, $queryParts);

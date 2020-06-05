@@ -17,7 +17,7 @@ final class ConfigurationTest extends TestCase
     /**
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->subject = new Configuration();
         parent::setUp();

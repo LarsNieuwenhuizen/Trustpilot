@@ -19,7 +19,7 @@ class ClientTest extends TestCase
     /**
      * Test setup
      */
-    public function setUp()
+    public function setUp(): void
     {
         $configurationMock = $this->getMockBuilder(Configuration::class)->getMock();
         $this->subject = new Client($configurationMock);
